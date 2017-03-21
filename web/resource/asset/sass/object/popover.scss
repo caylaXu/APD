@@ -1,0 +1,129 @@
+.popover,.dialog{
+	position: fixed;
+	z-index: 100;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	height: 0;
+	display: none;
+	opacity: 0;
+	transition: all 0.5s;
+	text-align: center;
+
+	.inner{
+		margin-top: -50px;
+		position: relative;
+		display: inline-block;
+		text-align: left;
+		background: white;
+		box-shadow: 0 0 7px rgba(0,0,0,0.3);
+		transition: all 0.5s;
+	}
+	.title{
+		text-align: center;
+		padding: 10px;
+		border-bottom: $border;
+	}
+	.content{
+		padding: 30px 24px;
+		min-height: 60px;
+	}
+
+	&.in{
+		opacity: 1;
+		.inner{
+			margin-top: 0;
+		}
+
+	}
+}
+
+.popover{
+	top: 120px;
+	bottom: auto;
+
+	&.message-popover{
+		.inner{
+			border: 1px solid #b6b6b6\9;
+			text-align: center;
+			overflow: hidden;
+			transition: all 0.5s;
+			width: 260px;
+		}
+		.content{
+			transition: all 0.3s;
+			opacity: 0;
+		}
+		.btn{
+			padding-top: 5px;
+			padding-bottom: 5px;
+		}
+
+
+		&.in{
+			.content{
+				opacity: 1;
+			}
+		}
+	}
+
+}
+
+.dialog{
+
+	display: table;
+	width: 100%;
+	height: 100%;
+	background: rgba(0,0,0,0.0);
+
+	.outer{
+		display: table-cell;
+		padding-top: 120px;
+		// vertical-align: middle;
+	}
+	.inner{
+		min-width: 300px;
+		height: 140px;
+		text-align: center;
+		border-radius: 5px;
+	}
+	.button-row{
+		button{
+			padding: 8px 25px;
+			line-height: 1em;
+			+ button{
+				margin-left: 25px;
+			}
+		}
+	}
+
+}
+
+.dropdown{
+
+	position: relative;
+
+	.dropdown-menu{
+		display: none;
+		position: absolute;
+		z-index: 1;
+		left: 0;
+		background: white;
+		box-shadow: 0 0 7px rgba(0,0,0,0.3);
+		padding: 10px 20px;
+
+        .menu-item{
+            display: block;
+            padding: 10px 20px;
+			margin: 0 -20px;
+            &:hover{
+                background: #f1f1f1;
+            }
+        }
+	}
+
+	&.open .dropdown-menu{
+		display: block;
+	}
+}

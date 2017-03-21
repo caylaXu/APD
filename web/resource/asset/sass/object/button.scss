@@ -1,0 +1,170 @@
+
+.btn{
+	border: none;
+	background: #ccc;
+	color: white;
+	border-radius: 5px;
+	font-family: inherit;
+	padding: 8px 30px;
+	cursor: pointer;
+	display: inline-block;
+	vertical-align: middle;
+	text-align: center;
+	line-height: normal;
+
+	&:hover{
+		box-shadow: 0 0 5px rgba(0,0,0,0.2) inset;
+	}
+	&:active{
+		box-shadow: 0 2px 5px rgba(0,0,0,0.2) inset;
+	}
+	&.disabled,&[disabled]{
+		cursor: default;
+		opacity: 0.5;
+		filter: alpha(opacity=50);
+	}
+	&.freestyle{
+		padding: 0;
+		background-color: none;
+		border-radius: 0;
+		box-shadow: none;
+	}
+	&.btn-reverse{
+		border: 1px solid $font-color;
+		padding-top: 7px;
+		padding-bottom: 7px;
+		color: $font-color;
+		background: none;
+		&:hover{
+			box-shadow: 0 0 5px rgba(0,0,0,0.2);
+		}
+		&:active{
+			box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+		}	
+	}
+
+	.icon{
+		margin-right: 5px;
+	}
+}
+.btn-green{
+	background: $green; 
+	color: white;
+	&.btn-reverse{
+		border-color: $green;
+		color: $green;
+	}
+}
+.btn-orange{
+	background: $orange; 
+	color: white;
+	&.btn-reverse{		
+		border-color: $orange;
+		color: $orange;
+	}
+}
+.btn-blue{
+	background: $blue;
+	color: white;
+	&.btn-reverse{		
+		border-color: $blue;
+		color: $blue;
+	}
+}
+.btn-gray{
+	background: $gray;
+	color: white;
+	&.btn-reverse{		
+		border-color: $gray;
+		color: $gray;
+	}
+}
+
+.btn-long{
+	width: 100%;
+	display: block;
+}
+.btn-large{
+	width: 160px;
+}
+.btn-medium{
+	width: 120px;
+}
+.btn-small{
+	padding: 8px 16px;
+	border-radius: 3px;
+}
+
+@mixin borderRadius($radius:20px) {
+	border-radius: $radius;
+	border-top-left-radius: $radius;
+	border-top-right-radius: $radius;
+	border-bottom-left-radius: $radius;
+	border-bottom-right-radius: $radius;
+}
+
+$duration: .4s;
+$checkedColor: #64bd63;
+.mui-switch {
+	width: 52px;
+	height: 31px;
+	position: relative;
+	border: 1px solid #dfdfdf;
+	background-color: #fdfdfd;
+	box-shadow: #dfdfdf 0 0 0 0 inset;
+	@include borderRadius();
+	background-clip: content-box;
+	display: inline-block;
+	-webkit-appearance: none;
+	user-select: none;
+	outline: none;
+	&:before {
+		content: '';
+		width: 29px;
+		height: 29px;
+		position: absolute;
+		top: 0px;
+		left: 0;
+		@include borderRadius();
+		background-color: #fff;
+		box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+	}
+	&:checked {
+		border-color: $checkedColor;
+		box-shadow: $checkedColor 0 0 0 16px inset;
+		background-color: $checkedColor;
+		&:before {
+			left: 21px;
+		}
+	}
+	&.mui-switch-animbg {
+		transition: background-color ease $duration;
+		&:before {
+			transition: left 0.3s;
+		}
+		&:checked {
+			box-shadow: #dfdfdf 0 0 0 0 inset;
+			background-color: $checkedColor;
+			transition: border-color $duration, background-color ease $duration;
+			&:before {
+				transition: left 0.3s;
+			}
+		}
+
+	}
+	&.mui-switch-anim {
+		transition: border cubic-bezier(0, 0, 0, 1) $duration, box-shadow cubic-bezier(0, 0, 0, 1) $duration;
+		&:before {
+			transition: left 0.3s;
+		}
+		&:checked {
+			box-shadow: $checkedColor 0 0 0 16px inset;
+			background-color: $checkedColor;
+			transition: border ease $duration, box-shadow ease $duration, background-color ease $duration*3;
+			&:before {
+				transition: left 0.3s;
+			}
+		}
+
+	}
+}

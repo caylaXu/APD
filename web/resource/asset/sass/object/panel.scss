@@ -1,0 +1,18 @@
+.panel{
+	border-top: $border;
+	background: white;
+	margin-bottom: 30px;
+
+	&.panel-blue{
+		border-color: #00adff;
+	}
+	&.panel-orange{
+		border-color: #ffa800;
+	}
+
+	.title{
+		padding: 20px;
+		font-size: $medium;
+		color: $black;
+	}
+}

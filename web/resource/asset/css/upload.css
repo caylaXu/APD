@@ -1,0 +1,25 @@
+a {
+    text-decoration: none;
+}
+
+#versions th, #versions td {
+    border-right: solid 1px;
+    border-bottom: solid 1px;
+}
+
+.box {
+    padding: 6px;
+}
+
+.desc {
+    text-align: right;
+}
+
+input[type=text] {
+    width: 260px;
+}
+
+textarea {
+    width: 260px;
+    height: 200px;
+}
